@@ -8,6 +8,9 @@ import urllib.request
 import os
 import time
 
+
+# ref: https://github.com/chuanenlin/shutterscrape
+# method to get the scraped images and stored in a directory
 def imagescrape(searchTerm, searchPage, image_type, directory_path):
     titles = list()
     try:
@@ -32,14 +35,16 @@ def imagescrape(searchTerm, searchPage, image_type, directory_path):
             print("Page " + str(i))
 
             scraper = BeautifulSoup(data, "lxml")
-            img_container = scraper.find_all("img", {"class":"mui-1l7n00y-thumbnail"})
+            img_container = scraper.find_all("img", {
+                "class": "mui-1l7n00y-thumbnail"
+            })
 
             for j in range(0, len(img_container)-1):
                 img_src = img_container[j].get("src")
                 img_title = img_container[j].get("alt")
 
                 try:
-                    urllib.request.urlretrieve(img_src, main_path + '/joy_{}.{}'.format(str(count), img_src[-3:]))
+                    urllib.request.urlretrieve(img_src, main_path + '/{}_{}.{}'.format(searchTerm, str(count), img_src[-3:]))
                     titles.append([count, img_title])
 
                 except Exception as e:
@@ -57,10 +62,22 @@ def imagescrape(searchTerm, searchPage, image_type, directory_path):
     return
 
 
-parent_path = 'E:\M_TECH ASSIGNMENTS\Information Retrieval\Project'
-permission_mode = 0o777
+# method to create a directory with a given name
+def create_directory(dirname):
+    parent_path = 'E:\M_TECH ASSIGNMENTS\Information Retrieval\Project'
+    permission_mode = 0o777
+    image_path = os.path.join(parent_path, dirname)
+    os.mkdir(image_path, permission_mode)
 
-image_path = os.path.join(parent_path, 'image_data')
-# os.mkdir(image_path, permission_mode)
+    return image_path
 
-imagescrape('depression anxiety', 15, 'photo', image_path)
+
+if __name__ == '__main__':
+    dirname = 'image_data'
+    image_path = create_directory(dirname)
+
+    tag = 'depression anxiety'
+    no_of_pages = 15
+    type_of_posts = 'photo'
+
+    imagescrape(tag, no_of_pages, type_of_posts, image_path)
