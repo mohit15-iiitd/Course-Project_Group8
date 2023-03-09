@@ -81,7 +81,7 @@ def preprocessing(df):
         # white space removel
         df1['white_space_removed'][i] = re.sub("\s+", " ", df1.text[i])
         emoji_removed = re.sub(r'\W+', ' ', df1['white_space_removed'][i].encode('ascii', 'ignore').decode('utf-8'), flags=re.UNICODE).strip()
-        df1['emoji_removed'] = emoji_removed
+        df1['emoji_removed'][i] = emoji_removed
 
         # lower casing and tokenization
         lower = df1['emoji_removed'][i].lower()
