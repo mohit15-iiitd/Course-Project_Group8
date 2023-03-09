@@ -73,11 +73,9 @@ def preprocessing(df):
     df1['spelling_checked_data'] = 0
     stop_words = set(stopwords.words("english"))
 
-#   lemmatizer = WordNetLemmatizer()
     spell = Speller(lang='en')
 
 
-  # iterate over each row of dataset and preprocess data
     for i in range(df1.shape[0]):
 
         # white space removel
@@ -121,13 +119,6 @@ def preprocessing(df):
         # spelling checking
 
     return df1
-
-
-
-data.iloc[0]
-
-
-
 
 preprocessed_data = preprocessing(data)
 
