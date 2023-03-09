@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
+
 
 
 import pandas as pd
@@ -48,25 +48,16 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-# In[5]:
-
 
 data = pd.read_csv("uncleaned_combined_txt.csv")
 
 
-# In[6]:
+
 
 
 data
 
 
-# In[ ]:
-
-
-
-
-
-# In[7]:
 
 
 # preprocessing funciton created
@@ -132,25 +123,15 @@ def preprocessing(df):
     return df1
 
 
-# In[8]:
-
 
 data.iloc[0]
 
 
-# In[ ]:
 
 
 preprocessed_data = preprocessing(data)
 
 
-# In[ ]:
-
-
-preprocessed_data
-
-
-# In[ ]:
 
 
 df = pd.DataFrame(columns = ['text', 'target'],index = None)
@@ -158,21 +139,10 @@ df['text'] = preprocessed_data['spelling_checked_data']
 df['target'] = data['label']
 
 
-# In[ ]:
 
 
 df.to_csv("cleaned_data_all.csv", index = False)
 cleaned_df = pd.read_csv("cleaned_data_all.csv")
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
 
 
 
