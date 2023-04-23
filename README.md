@@ -12,7 +12,7 @@ With an explosion in the availability of instant web-based services and enhancem
 > directly relevant or related to the content being shared online.
 
 ### Model Architecture
-![architecture](https://raw.githubusercontent.com/mohit15-iiitd/Course-Project_Group8/master/images/Multi-Modal%20Architecture.jpeg?token=GHSAT0AAAAAAB6U6QRGTKEIUMYFQIGWFXD4ZCFJOMA)
+![architecture](https://github.com/mohit15-iiitd/Course-Project_Group8/blob/master/images/Multi-Modal%20Architecture.jpeg?raw=true)
 
 ## Dataset Creation
 
