@@ -39,6 +39,8 @@ The Structure of our dataset is:
 >     - val.jsonl
 > </pre>
 
+In the above file structure. The img folder contains all the images. The train, test and val.jsonl files contains the text and labels of the whole data split. The whole dataset is splitted into train, test and validation with ratio of 80:10:10 .
+
 ## Codebase
 
 **We have experimented on this dataset in different setups**
