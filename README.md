@@ -83,4 +83,4 @@ The setup-3 which is **InceptionV2 + BERT** outperforms the other setup with the
 
 For Explainability, we have used **GradCam**. This shows, which portion of the image our model is focusing while classifying.
 
-![gradcam](https://raw.githubusercontent.com/mohit15-iiitd/Course-Project_Group8/master/images/gradcam.png?token=GHSAT0AAAAAAB6U6QRGSJHFBCGFZBPQEIKMZCFJ5IQ)
+![gradcam](https://github.com/mohit15-iiitd/Course-Project_Group8/blob/master/images/gradcam.png?raw=true)
